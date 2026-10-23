@@ -1,0 +1,24 @@
+{
+  "name": "Balanced guardrails",
+  "version": "1.0",
+  "actions": {
+    "instruction_override": "block",
+    "protected_disclosure": "block",
+    "external_exfiltration": "block",
+    "protected_value": "block",
+    "suspicious_context": "escalate"
+  },
+  "sourceOverrides": {
+    "user": {},
+    "document": {
+      "suspicious_context": "sanitize"
+    },
+    "tool": {
+      "suspicious_context": "sanitize"
+    }
+  },
+  "protectedValues": [
+    "PSHLD-DEMO-42",
+    "northstar-demo-token"
+  ]
+}

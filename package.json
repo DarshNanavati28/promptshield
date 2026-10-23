@@ -1,0 +1,14 @@
+{
+  "name": "promptshield",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A source-aware prompt injection and data exfiltration screening middleware demo.",
+  "scripts": {
+    "start": "node server.mjs",
+    "eval": "node scripts/evaluate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

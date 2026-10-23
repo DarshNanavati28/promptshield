@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f6" />
+    <meta name="description" content="PromptShield screens untrusted prompts and tool output before they reach a language model." />
+    <title>PromptShield — Trust boundary console</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#overview" data-view="overview" aria-label="PromptShield overview">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3.2 27 7v8.5c0 6.5-4.2 10.9-11 13.3C9.2 26.4 5 22 5 15.5V7l11-3.8Z" stroke="currentColor" stroke-width="1.8"/><path d="m11.5 15.9 3 3 6.4-6.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand-copy"><strong>promptshield</strong><small>TRUST BOUNDARY</small></span>
+        </a>
+        <div class="nav-label">WORKSPACE</div>
+        <nav class="nav-list">
+          <button class="nav-item is-active" data-view="overview"><span class="nav-icon">◫</span><span>Overview</span></button>
+          <button class="nav-item" data-view="inspector"><span class="nav-icon">⌕</span><span>Prompt inspector</span><span class="nav-dot"></span></button>
+          <button class="nav-item" data-view="evaluation"><span class="nav-icon">◷</span><span>Evaluation</span></button>
+          <button class="nav-item" data-view="policy"><span class="nav-icon">⚙</span><span>Policy editor</span></button>
+          <button class="nav-item" data-view="audit"><span class="nav-icon">≡</span><span>Decision log</span><span id="audit-count" class="nav-count">0</span></button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="boundary-card"><span class="boundary-pip"></span><div><strong>Local screening</strong><small>Content stays in this browser</small></div></div>
+          <div class="sidebar-version"><span>PromptShield</span><span>v1.0.0</span></div>
+        </div>
+      </aside>
+      <main class="main-column">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Security</span><span class="crumb-slash">/</span><strong id="page-crumb">Overview</strong></div>
+          <div class="topbar-right"><span class="local-pill"><span></span> Local demo</span><button class="avatar" aria-label="PromptShield workspace">PS</button></div>
+        </header>
+        <div id="app-main" class="page-content" tabindex="-1"></div>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
